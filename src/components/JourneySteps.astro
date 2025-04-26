@@ -1,0 +1,49 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Aprenda sem complicação",
+    description: "Domine ferramentas como n8n, IA, Make e JSON mesmo sem experiência com programação. Nossa metodologia foi feita para iniciantes.",
+    icon: "🧠"
+  },
+  {
+    number: "02",
+    title: "Aplique na prática",
+    description: "Use templates prontos e participe de mentorias semanais para criar seus primeiros projetos com suporte direto dos especialistas.",
+    icon: "⚙️"
+  },
+  {
+    number: "03",
+    title: "Ganhe dinheiro real",
+    description: "Acesse oportunidades exclusivas via nossa plataforma Tomik Jobs e comece a faturar com projetos reais de automação e IA.",
+    icon: "💰"
+  }
+];
+---
+
+<section class="section bg-dark-900">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 fade-in-element">
+      <h2 class="mb-6">Sua Jornada para o <span class="text-accent-400">Sucesso</span></h2>
+      <p class="text-gray-300 text-lg">
+        Nosso método foi desenhado para transformar iniciantes em especialistas em automação e IA, com um caminho claro para resultados.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 fade-in-element">
+      {steps.map((step) => (
+        <div class="card group hover:border hover:border-primary-500/30 transition-all duration-300 relative overflow-hidden">
+          <div class="absolute -right-4 -top-4 text-9xl font-bold text-primary-500/10 group-hover:text-primary-500/20 transition-colors duration-300">
+            {step.number}
+          </div>
+          
+          <div class="relative z-10">
+            <div class="text-4xl mb-4">{step.icon}</div>
+            <h3 class="text-xl font-bold mb-3">{step.title}</h3>
+            <p class="text-gray-300">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

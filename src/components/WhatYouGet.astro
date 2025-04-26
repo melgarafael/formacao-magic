@@ -1,0 +1,182 @@
+---
+const features = [
+  {
+    id: "course",
+    title: "Curso Completo de Automação",
+    description: "Domine n8n, IA, Make, JSON, GPT e APIs através de aulas práticas e objetivas.",
+    icon: "📚",
+    modalContent: {
+      title: "Curso Completo de Automação",
+      description: "Domine ferramentas como n8n, Make, JSON, GPT, APIs e muito mais. Mesmo sem saber programar, você será guiado com aulas práticas direto ao ponto.",
+      story: "João era garçom e sem nenhuma base técnica. Em 1 mês, montou seu primeiro Agente de IA e fechou um contrato de R$1.800 com um salão de beleza usando só o que aprendeu na Formação."
+    }
+  },
+  {
+    id: "content",
+    title: "400+ Horas de Conteúdo",
+    description: "Material extenso e completo para você aprender no seu ritmo, do básico ao avançado.",
+    icon: "⏱️",
+    modalContent: {
+      title: "400+ Horas de Conteúdo",
+      description: "Acesso a um acervo profundo de aulas do básico ao avançado, com tudo que você precisa para criar fluxos reais e vender soluções no mercado.",
+      story: "Você quer criar um Agente com conexão a banco de dados. Em vez de pesquisar por horas no YouTube, basta buscar no conteúdo e já tem uma aula pronta, passo a passo."
+    }
+  },
+  {
+    id: "mentoring",
+    title: "4 Mentorias Semanais ao Vivo",
+    description: "Sessões via Zoom para tirar dúvidas, revisar projetos e acelerar seu aprendizado.",
+    icon: "🔄",
+    modalContent: {
+      title: "4 Mentorias Semanais ao Vivo",
+      description: "Sessões semanais no Zoom com especialistas para tirar dúvidas, revisar projetos e acelerar sua evolução.",
+      story: "Você travou numa lógica complexa do n8n. Na mentoria de quarta-feira, um mentor compartilha a tela, destrava sua lógica e ainda te dá um insight que vira uma nova entrega para seu cliente."
+    }
+  },
+  {
+    id: "templates",
+    title: "Templates Prontos para Usar",
+    description: "Copie e adapte modelos funcionais para seus projetos e economize tempo.",
+    icon: "📋",
+    modalContent: {
+      title: "Templates Prontos para Usar",
+      description: "Acesso a modelos de agentes já testados: comercial, atendimento, agendamento, CRM, etc. É só copiar, adaptar e usar.",
+      story: "Você acabou de conseguir um cliente novo. Em vez de começar do zero, você pega o template de Agente de Agendamento, ajusta os dados do cliente e entrega no mesmo dia."
+    }
+  },
+  {
+    id: "community",
+    title: "Comunidade Exclusiva no Discord",
+    description: "Conecte-se com outros alunos e especialistas para networking e colaboração.",
+    icon: "👥",
+    modalContent: {
+      title: "Comunidade Exclusiva no Discord",
+      description: "Ambiente ativo para networking, dúvidas e oportunidades. Muitos alunos fazem parcerias ou conseguem clientes ali mesmo.",
+      story: "Ana compartilha seu primeiro projeto no Discord. Em 15 minutos, recebe um feedback valioso e um convite para parceria com outro aluno que atua na mesma área."
+    }
+  },
+  {
+    id: "support",
+    title: "Suporte Técnico Especializado",
+    description: "Ajuda por IA e humanos para resolver qualquer problema técnico que aparecer.",
+    icon: "🛠️",
+    modalContent: {
+      title: "Suporte Técnico Especializado",
+      description: "Não sabe o que deu errado no fluxo? Tem acesso a IA + equipe humana pra resolver qualquer travamento técnico, direto pelo painel.",
+      story: "Você está com um erro no webhook. Em vez de passar horas tentando resolver, aciona o suporte e recebe a resposta exata em minutos."
+    }
+  },
+  {
+    id: "platform",
+    title: "Plataforma Tomik Jobs",
+    description: "Acesso exclusivo ao nosso marketplace de projetos reais de automação e IA.",
+    icon: "💼",
+    modalContent: {
+      title: "Plataforma Tomik Jobs",
+      description: "Acesso ao nosso marketplace de automações. Poste serviços, receba propostas e feche com empresários reais.",
+      story: "Após criar seu primeiro Agente Comercial, você sobe no Tomik Jobs. Uma empresa entra em contato, e em menos de uma semana você fecha um projeto de R$3.500."
+    }
+  },
+  {
+    id: "certificate",
+    title: "Certificado de Conclusão",
+    description: "Documento que comprova suas habilidades para apresentar a clientes e empresas.",
+    icon: "🏆",
+    modalContent: {
+      title: "Certificado de Conclusão",
+      description: "Documento oficial ao final da Formação, ideal para mostrar no LinkedIn, em propostas comerciais ou entrevistas.",
+      story: "Você prospecta clientes no LinkedIn. Envia seu certificado + portfólio. O cliente responde: 'Só pelo nível disso aqui já dá pra ver que você é diferenciado.' Contrato fechado."
+    }
+  }
+];
+---
+
+<section class="section bg-dark-950 relative">
+  <div class="absolute top-0 left-0 w-full h-40 bg-dark-900 -z-10"></div>
+  
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 fade-in-element">
+      <h2 class="mb-6">O Que Você Vai <span class="text-accent-400">Receber</span></h2>
+      <p class="text-gray-300 text-lg">
+        A Formação Magic inclui tudo que você precisa para dominar automações com IA e começar a ganhar dinheiro com essa habilidade.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in-element" x-data="{ activeModal: null }">
+      {features.map((feature) => (
+        <div 
+          class="card hover:bg-dark-800 transition-all duration-300 cursor-pointer group relative"
+          @click={`activeModal = '${feature.id}'`}
+        >
+          <div class="absolute top-4 right-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+            <div class="w-6 h-6 rounded-full bg-primary-500/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-primary-400">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+              </svg>
+            </div>
+          </div>
+          
+          <div class="text-4xl mb-4">{feature.icon}</div>
+          <h3 class="text-xl font-bold mb-2">{feature.title}</h3>
+          <p class="text-gray-300">{feature.description}</p>
+        </div>
+
+        <div
+          x-show={`activeModal === '${feature.id}'`}
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 transform scale-90"
+          x-transition:enter-end="opacity-100 transform scale-100"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100 transform scale-100"
+          x-transition:leave-end="opacity-0 transform scale-90"
+          class="fixed inset-0 z-50 flex items-center justify-center p-4"
+          x-cloak
+        >
+          <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" @click={`activeModal = null`}></div>
+          
+          <div class="relative bg-dark-800 rounded-xl max-w-lg w-full p-6 md:p-8">
+            <button 
+              class="absolute top-4 right-4 text-gray-400 hover:text-white"
+              @click={`activeModal = null`}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div class="text-center mb-6">
+              <div class="text-5xl mb-4">{feature.icon}</div>
+              <h3 class="text-2xl font-bold">{feature.modalContent.title}</h3>
+            </div>
+
+            <div class="space-y-6">
+              <p class="text-gray-300">{feature.modalContent.description}</p>
+              
+              <div class="bg-dark-900 rounded-lg p-4">
+                <div class="flex items-center gap-2 text-primary-400 mb-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                  </svg>
+                  <span class="font-medium">Caso Real</span>
+                </div>
+                <p class="text-gray-300">{feature.modalContent.story}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import Alpine from 'alpinejs';
+  window.Alpine = Alpine;
+  Alpine.start();
+</script>
+
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+</style>

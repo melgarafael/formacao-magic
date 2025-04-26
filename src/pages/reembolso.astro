@@ -1,0 +1,80 @@
+---
+import StaticPageLayout from '../layouts/StaticPageLayout.astro';
+---
+
+<StaticPageLayout 
+  title="Política de Reembolso"
+  description="Política de reembolso e garantia da Formação Magic"
+>
+  <h1 class="text-4xl font-bold mb-8">Política de Reembolso</h1>
+
+  <div class="prose prose-invert max-w-none">
+    <p class="text-xl text-gray-300 mb-8">
+      Na <strong>Formação Magic</strong>, queremos que você se sinta seguro para tomar sua decisão. Por isso, oferecemos uma política clara e objetiva.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="card">
+        <div class="text-4xl mb-4">🛡️</div>
+        <h2 class="text-2xl font-bold mb-4">Garantia de 15 Dias</h2>
+        <p class="mb-6">
+          Você tem até <strong>15 dias</strong> após a compra para testar a plataforma. Caso não se sinta satisfeito com o conteúdo, basta solicitar o reembolso sem burocracias.
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Reembolso integral</li>
+          <li>Sem justificativa necessária</li>
+          <li>Processo simples e rápido</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="text-4xl mb-4">💰</div>
+        <h2 class="text-2xl font-bold mb-4">Garantia de Resultado</h2>
+        <p class="mb-6">
+          Se em 6 meses você seguir o método e não faturar R$10 mil, nós te contratamos por R$2.500/mês por 2 meses.
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Garantia válida por 6 meses</li>
+          <li>Contrato garantido</li>
+          <li>Suporte prioritário</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-6">Como Solicitar seu Reembolso</h2>
+    
+    <div class="card text-center p-8 mb-12">
+      <p class="mb-6">Preencha o formulário abaixo com seus dados:</p>
+      <a 
+        href="https://forms.clickup.com/9013437304/f/8ckw8vr-1153/O7XYHJV97ELP80N3XT" 
+        target="_blank"
+        class="btn-primary inline-flex items-center justify-center"
+      >
+        Solicitar Reembolso
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+
+    <h2 class="text-2xl font-bold mb-4">Processo de Reembolso</h2>
+    <ol class="list-decimal pl-6 mb-8 space-y-4">
+      <li>Preencha o formulário de solicitação</li>
+      <li>Nossa equipe analisará o pedido em até 24 horas</li>
+      <li>O reembolso será processado em até 5 dias úteis</li>
+      <li>O valor será estornado no mesmo método de pagamento utilizado na compra</li>
+    </ol>
+
+    <div class="bg-primary-900/20 p-6 rounded-lg mt-8">
+      <h3 class="text-xl font-bold mb-2">⚠️ Importante</h3>
+      <p>
+        O prazo de 15 dias começa a contar a partir da data de confirmação do pagamento. 
+        Após este período, a garantia de resultado de 6 meses passa a valer automaticamente.
+      </p>
+      <p class="mt-4">
+        Dúvidas? Entre em contato pelo e-mail: 
+        <a href="mailto:suporte@automatiklabs.com.br" class="text-accent-400 hover:underline">suporte@automatiklabs.com.br</a>
+      </p>
+    </div>
+  </div>
+</StaticPageLayout>

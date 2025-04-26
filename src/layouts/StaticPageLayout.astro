@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title} | Formação Magic</title>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=1;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2955744278054674');
+      fbq('init', '1610239209930602');
+      fbq('track', 'PageView');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-br from-dark-900 to-dark-950 text-white font-sans min-h-screen">
+    <div class="relative">
+      <div class="fixed inset-0 z-[-1]">
+        <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-primary-500/5 blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-secondary-500/5 blur-[120px]"></div>
+      </div>
+      
+      <main class="py-20">
+        <div class="container-custom max-w-4xl mx-auto">
+          <slot />
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+
+    <WhatsAppButton />
+
+    <script>
+      // Track CTA clicks
+      document.querySelectorAll('[data-fb-event="cta"]').forEach(el => {
+        el.addEventListener('click', () => fbq('track', 'InitiateCheckout'));
+      });
+
+      // Track form submissions
+      const contactForm = document.querySelector('form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          fbq('track', 'Lead');
+          contactForm.submit();
+        });
+      }
+    </script>
+  </body>
+</html>

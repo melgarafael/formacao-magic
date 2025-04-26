@@ -1,0 +1,37 @@
+---
+const painPoints = [
+  {
+    icon: "❌",
+    text: "Você sente que está ficando para trás enquanto todo mundo fala de IA?"
+  },
+  {
+    icon: "❌",
+    text: "Já tentou entender n8n ou automações e travou logo no começo?"
+  },
+  {
+    icon: "❌",
+    text: "Fica vendo vídeos de pessoas ganhando dinheiro com IA mas não sabe por onde começar?"
+  }
+];
+---
+
+<section class="section bg-dark-900 py-16">
+  <div class="container-custom">
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-6 mb-8 fade-in-element">
+        {painPoints.map((point) => (
+          <div class="flex items-start gap-4">
+            <span class="text-2xl">{point.icon}</span>
+            <p class="text-xl text-gray-200">{point.text}</p>
+          </div>
+        ))}
+      </div>
+      
+      <div class="mt-8 fade-in-element">
+        <p class="text-xl text-gray-200">
+          👉 A Formação Magic foi criada para caras como você: curiosos, inteligentes, que só precisam de um caminho prático, direto e que funcione.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

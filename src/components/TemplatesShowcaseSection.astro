@@ -1,0 +1,282 @@
+---
+const templates = [
+  {
+    title: "Agente de IA Comercial",
+    description: "Domine o projeto que entende áudio, imagem, texto e se conecta ao CRM.",
+    tools: ["🧠", "🤖", "🖼️", "🎙️", "📄"],
+    tag: "+Popular",
+    modalContent: {
+      description: "Esse é um dos nossos projetos mais completos. Aqui você vai aprender a criar um agente de IA que:",
+      features: [
+        "Recebe e interpreta mensagens por texto, voz ou imagem",
+        "Usa inteligência para entender e responder de forma humanizada",
+        "Se conecta com CRMs para registrar leads automaticamente",
+        "Aciona ferramentas como WhatsApp, Gmail, Supabase e Airtable",
+        "Pode ser usado por empresas para substituir atendentes humanos com eficiência"
+      ],
+      story: "Imagine fechar um contrato com uma clínica ou infoprodutor, entregando um robô que responde como humano e ainda atualiza o CRM da empresa. É isso que esse template te entrega."
+    }
+  },
+  {
+    title: "Agente SDR com Agendamento",
+    description: "Automatiza qualificação e marca reuniões no Google Calendar.",
+    tools: ["🗓️", "📞", "🤖", "🧠"],
+    tag: "+Alta Conversão",
+    modalContent: {
+      description: "Você vai aprender a montar um Agente que:",
+      features: [
+        "Identifica intenção de compra do lead",
+        "Faz perguntas inteligentes e conduz a conversa",
+        "Marca automaticamente sessões no Google Calendar (sem enviar link)",
+        "Se conecta ao CRM e ao e-mail para confirmação"
+      ],
+      story: "Esse agente fecha reuniões enquanto você dorme. Ideal para empresas com fluxo de leads alto e que precisam automatizar a pré-venda."
+    }
+  },
+  {
+    title: "Agente de IA de Telemarketing",
+    description: "Faz ligação real e conversa com IA em tempo real.",
+    tools: ["📞", "🗣️", "🤖", "GPT"],
+    tag: "+Inovador",
+    modalContent: {
+      description: "Aqui você aprende a conectar uma IA de conversação com o sistema da VAPI (Voice API) para:",
+      features: [
+        "Realizar chamadas para leads ou clientes",
+        "Falar com linguagem natural (via Eleven Labs)",
+        "Agendar, confirmar ou qualificar leads por telefone"
+      ],
+      story: "Você entrega um call center sem humanos. Esse é o futuro da prospecção e atendimento para negócios locais."
+    }
+  },
+  {
+    title: "Agente Turbinador de Agências",
+    description: "Automatiza contratos, onboarding, planejamento e gestão.",
+    tools: ["📋", "🧾", "📈", "🤝"],
+    tag: "+100% Prático",
+    modalContent: {
+      description: "Com esse agente, você automatiza:",
+      features: [
+        "Contratos com o cliente (envio + assinatura)",
+        "Onboarding do cliente (checklists e integrações)",
+        "Gestão de entregas e pendências",
+        "Alertas pro seu time ou cliente via WhatsApp"
+      ],
+      story: "Ele é como um \"mini gerente\" que organiza a casa. É o que falta pra sua agência escalar sem virar uma bagunça."
+    }
+  },
+  {
+    title: "Agente que Lê Documentos",
+    description: "Lê PDFs e responde perguntas com base neles.",
+    tools: ["📄", "🤖", "🔍"],
+    tag: "+Versátil",
+    modalContent: {
+      description: "Aprenda a usar IA + Pinecone + n8n para criar um agente que:",
+      features: [
+        "Recebe documentos em PDF",
+        "Extrai e armazena o conteúdo de forma inteligente",
+        "Responde perguntas com base nos documentos",
+        "Ideal para empresas, advogados ou suporte com base em manuais"
+      ],
+      story: "Imagine que o cliente te envia o contrato e pergunta algo sobre ele. Esse robô responde com base no conteúdo, sem alucinação."
+    }
+  },
+  {
+    title: "Automação Guiada de Vendas",
+    description: "A mesma usada para vender R$8mi no WhatsApp.",
+    tools: ["💬", "📈", "🔥", "GPT"],
+    tag: "+Lucrativo",
+    modalContent: {
+      description: "Aqui você vai aprender a usar Manychat + n8n + IA para criar:",
+      features: [
+        "Uma jornada guiada de venda via WhatsApp",
+        "Captação de leads automatizada",
+        "Qualificação, objeções e fechamento no mesmo funil"
+      ],
+      story: "É o mesmo funil que usamos para vender nossos próprios cursos. Totalmente replicável e testado."
+    }
+  }
+];
+---
+
+<section class="section bg-dark-900 relative py-24">
+  <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-primary-900/10 blur-[120px] -z-10"></div>
+  
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 fade-in-element">
+      <h2 class="mb-6">Explore Templates Avançados de <span class="text-accent-400">IA para Começar na Prática</span></h2>
+      <p class="text-gray-300 text-lg mb-8">
+        Estes são alguns dos projetos que você vai aprender a construir e personalizar dentro da Formação Magic. Copie, edite e já comece ganhando tempo.
+      </p>
+      <a 
+        href="#demos" 
+        class="btn-primary inline-flex items-center justify-center"
+        @click="document.getElementById('demos').scrollIntoView({ behavior: 'smooth' })"
+      >
+        Ver Demonstrações
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </a>
+    </div>
+
+    <div 
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" 
+      x-data="{ 
+        activeModal: null,
+        toggleModal(id) {
+          this.activeModal = id;
+          if (id) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        }
+      }"
+    >
+      {templates.map((template, index) => (
+        <div 
+          class="card group hover:border-primary-500/30 transition-all duration-300 cursor-pointer relative fade-in-element"
+          style={`animation-delay: ${index * 100}ms`}
+          @click={`toggleModal('template-${index}')`}
+        >
+          <!-- Tag -->
+          <div class="absolute top-4 right-4 bg-accent-500/10 text-accent-400 text-sm font-medium px-2 py-1 rounded-full">
+            {template.tag}
+          </div>
+
+          <!-- Tools -->
+          <div class="flex gap-2 mb-4">
+            {template.tools.map(tool => (
+              <div class="text-2xl">{tool}</div>
+            ))}
+          </div>
+
+          <!-- Content -->
+          <div>
+            <h3 class="text-xl font-bold mb-2">{template.title}</h3>
+            <p class="text-gray-300">{template.description}</p>
+          </div>
+
+          <!-- Author -->
+          <div class="flex items-center gap-2 mt-4 pt-4 border-t border-dark-700">
+            <img 
+              src="/foto rafael.png" 
+              alt="Rafael Melgaço"
+              class="w-8 h-8 rounded-full object-cover"
+              loading="lazy"
+            />
+            <div class="flex items-center gap-1">
+              <span class="text-sm font-medium">Rafael Melgaço</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-accent-400">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <!-- Modals Container (outside the grid) -->
+      <div class="fixed inset-0 z-[100] pointer-events-none">
+        {templates.map((template, index) => (
+          <div
+            x-show={`activeModal === 'template-${index}'`}
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 flex items-center justify-center p-4 pointer-events-auto"
+            x-cloak
+          >
+            <div 
+              class="absolute inset-0 bg-black/80 backdrop-blur-sm" 
+              @click={`toggleModal(null)`}
+            ></div>
+            
+            <div 
+              class="relative bg-dark-800 rounded-xl w-full max-w-2xl p-4 md:p-8 max-h-[90vh] overflow-y-auto"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 transform scale-95"
+              x-transition:enter-end="opacity-100 transform scale-100"
+              x-transition:leave="transition ease-in duration-200"
+              x-transition:leave-start="opacity-100 transform scale-100"
+              x-transition:leave-end="opacity-0 transform scale-95"
+            >
+              <button 
+                class="fixed top-4 right-4 z-50 bg-dark-800 rounded-full p-2 text-gray-400 hover:text-white transition-colors"
+                @click={`toggleModal(null)`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              <div class="flex gap-2 mb-6">
+                {template.tools.map(tool => (
+                  <div class="text-2xl">{tool}</div>
+                ))}
+              </div>
+
+              <h3 class="text-2xl font-bold mb-4">{template.title}</h3>
+              
+              <p class="text-gray-300 mb-6">{template.modalContent.description}</p>
+
+              <div class="space-y-6">
+                <ul class="space-y-3">
+                  {template.modalContent.features.map((feature) => (
+                    <li class="flex items-start gap-3">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-accent-400 flex-shrink-0 mt-0.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span class="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="bg-dark-900 rounded-lg p-4">
+                  <div class="flex items-center gap-2 text-primary-400 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                    </svg>
+                    <span class="font-medium">Exemplo prático:</span>
+                  </div>
+                  <p class="text-gray-300">{template.modalContent.story}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="text-center mt-12 text-lg text-gray-300 fade-in-element">
+      E mais de 60 outros templates, para copiar, editar e colocar pra funcionar 🔥
+    </div>
+  </div>
+</section>
+
+<style>
+  [x-cloak] {
+    display: none !important;
+  }
+
+  /* Smooth scrollbar for modal content */
+  .overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.primary.500') theme('colors.dark.800');
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-track {
+    background: theme('colors.dark.800');
+  }
+  
+  .overflow-y-auto::-webkit-scrollbar-thumb {
+    background-color: theme('colors.primary.500');
+    border-radius: 20px;
+  }
+</style>

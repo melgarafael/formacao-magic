@@ -1,0 +1,53 @@
+---
+const demos = [
+  {
+    title: "Agente Comercial com IA",
+    description: "Esse robô qualifica leads, responde dúvidas e conduz o lead até a compra. É como ter um SDR que nunca dorme — e ainda entende áudio e imagem.",
+    videoId: "e2a8930e-26d1-459a-8cf8-783e03684446"
+  },
+  {
+    title: "Agente de IA de Agendamento",
+    description: "Automatize o agendamento de sessões ou reuniões sem depender de links externos. Esse robô entende o contexto, coleta os dados e marca direto no Google Calendar.",
+    videoId: "ec5d768c-1121-441e-968e-b088d341f2a4"
+  },
+  {
+    title: "Agente de IA que Faz Ligações",
+    description: "Sim, nosso aluno aprende a criar robôs que ligam para clientes, explicam o serviço e fazem a pré-venda de forma natural. Aqui está a prova.",
+    videoId: "932f8595-ed74-405c-945f-b70a6f5a2f68"
+  }
+];
+---
+
+<section id="demos" class="section bg-dark-900 scroll-mt-20">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 fade-in-element">
+      <h2 class="mb-6">
+        Veja na Prática como Funcionam os <span class="text-accent-400">Agentes de IA</span>
+      </h2>
+      <p class="text-gray-300 text-lg">
+        Assista aos vídeos demonstrando os Agentes em ação. Entenda como cada automação funciona na prática e o que você vai dominar dentro da Formação Magic.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in-element">
+      {demos.map((demo) => (
+        <div class="card">
+          <div class="aspect-video mb-6 rounded-lg overflow-hidden bg-dark-800">
+            <iframe 
+              src={`https://player-vz-d6a0843e-ffe.tv.pandavideo.com.br/embed/?v=${demo.videoId}`}
+              style="border:none;"
+              allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+              allowfullscreen="true"
+              width="100%"
+              height="100%"
+              fetchpriority="high"
+              class="w-full h-full"
+            ></iframe>
+          </div>
+          <h3 class="text-xl font-bold mb-3">{demo.title}</h3>
+          <p class="text-gray-300">{demo.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

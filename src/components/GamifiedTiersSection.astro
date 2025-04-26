@@ -1,0 +1,76 @@
+---
+const tiers = [
+  {
+    number: "01",
+    title: "O Novato",
+    description: "Entende os fundamentos, aprende a ferramenta e constrói seu primeiro agente de IA funcional.",
+    icon: "M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
+  },
+  {
+    number: "02",
+    title: "O Explorador",
+    description: "Valida sua automação com pessoas reais, entrega valor e conquista seu primeiro cliente.",
+    icon: "M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+  },
+  {
+    number: "03",
+    title: "O Arquiteto",
+    description: "Domina as automações e começa a estruturar soluções reais com IA para empresas.",
+    icon: "M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z"
+  },
+  {
+    number: "04",
+    title: "O Visionário",
+    description: "Cria estratégias automatizadas, aplica funis e começa a escalar com inteligência.",
+    icon: "M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+  },
+  {
+    number: "05",
+    title: "O Mago",
+    description: "Transforma tudo em um modelo de negócio escalável com IA — com faturamento recorrente.",
+    icon: "M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
+  }
+];
+---
+
+<section class="section bg-dark-950 relative py-24">
+  <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-primary-900/10 blur-[120px] -z-10"></div>
+  
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 fade-in-element">
+      <h2 class="mb-6">🚀 Suba de Nível com os <span class="text-accent-400">Tiers da Formação Magic</span></h2>
+      <p class="text-gray-300 text-lg">
+        Na Formação Magic, cada etapa da sua jornada tem um nome, um propósito e um marco. Você não estuda por estudar — você progride, desbloqueia conquistas e vê sua evolução acontecer de verdade.
+      </p>
+    </div>
+
+    <div class="relative">
+      <!-- Progress line -->
+      <div class="absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-primary-500/50 via-accent-500/50 to-primary-500/50 -translate-y-1/2 hidden lg:block"></div>
+
+      <!-- Tiers -->
+      <div class="flex flex-col lg:flex-row gap-6 overflow-x-auto pb-6 lg:pb-0 snap-x">
+        {tiers.map((tier, index) => (
+          <div class="w-full lg:w-1/5 snap-start fade-in-element" style={`animation-delay: ${index * 100}ms`}>
+            <div class="card group hover:border-primary-500/30 transition-all duration-300 h-full relative">
+              <div class="absolute -right-2 -top-2 text-6xl font-bold text-primary-500/10 group-hover:text-primary-500/20 transition-colors duration-300">
+                {tier.number}
+              </div>
+              
+              <div class="relative">
+                <div class="w-12 h-12 rounded-xl bg-primary-500/10 flex items-center justify-center text-primary-400 mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d={tier.icon} />
+                  </svg>
+                </div>
+                
+                <h3 class="text-xl font-bold mb-3">{tier.title}</h3>
+                <p class="text-gray-300">{tier.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

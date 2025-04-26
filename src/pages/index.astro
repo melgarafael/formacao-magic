@@ -1,0 +1,91 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import StickyBonusBar from '../components/StickyBonusBar.astro';
+import Hero from '../components/Hero.astro';
+import PainPoints from '../components/PainPoints.astro';
+import JourneySteps from '../components/JourneySteps.astro';
+import WhatYouGet from '../components/WhatYouGet.astro';
+import TimelineSection from '../components/TimelineSection.astro';
+import TemplatesShowcaseSection from '../components/TemplatesShowcaseSection.astro';
+import JamesFazTudoSection from '../components/JamesFazTudoSection.astro';
+import Demos from '../components/Demos.astro';
+import TomikJobs from '../components/TomikJobs.astro';
+import GamifiedTiersSection from '../components/GamifiedTiersSection.astro';
+import TestimonialsImagesSection from '../components/TestimonialsImagesSection.astro';
+import VideoTestimonial from '../components/VideoTestimonial.astro';
+import ZoomSupportSection from '../components/ZoomSupportSection.astro';
+import DiscordCommunitySection from '../components/DiscordCommunitySection.astro';
+import Guarantee from '../components/Guarantee.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<LandingLayout 
+  title="Formação Magic | Aprenda a Criar Agentes de IA" 
+  description="Transforme seu tempo livre em uma nova fonte de renda com IA de pelo menos R$10 mil mensais — sem saber programar, mesmo começando do zero."
+>
+  <StickyBonusBar />
+  <Hero />
+  <PainPoints />
+  <JourneySteps />
+  <WhatYouGet />
+  <TimelineSection />
+  <TemplatesShowcaseSection />
+  <JamesFazTudoSection />
+  <Demos />
+  <TomikJobs />
+  <GamifiedTiersSection />
+  <TestimonialsImagesSection />
+  <VideoTestimonial />
+  <ZoomSupportSection />
+  <DiscordCommunitySection />
+  <Guarantee />
+  <Pricing />
+  <FAQ />
+  <Footer />
+</LandingLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Handle smooth scroll for demo button
+    const demoButton = document.getElementById('openVideoModal');
+    if (demoButton) {
+      demoButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const demosSection = document.getElementById('demos');
+        if (demosSection) {
+          demosSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    // Handle accordion functionality
+    document.querySelectorAll('.card').forEach(card => {
+      const button = card.querySelector('button');
+      const content = card.querySelector('div[x-ref="container"]');
+      const icon = card.querySelector('svg');
+      
+      if (button && content && icon) {
+        let isOpen = false;
+        
+        const toggle = () => {
+          isOpen = !isOpen;
+          
+          if (isOpen) {
+            content.style.maxHeight = `${content.scrollHeight}px`;
+            icon.classList.add('rotate-180');
+          } else {
+            content.style.maxHeight = '0';
+            icon.classList.remove('rotate-180');
+          }
+        };
+        
+        // Initialize closed state
+        content.style.maxHeight = '0';
+        
+        button.addEventListener('click', toggle);
+      }
+    });
+  });
+</script>

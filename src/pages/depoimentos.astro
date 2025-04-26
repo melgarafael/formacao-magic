@@ -1,0 +1,73 @@
+---
+import StaticPageLayout from '../layouts/StaticPageLayout.astro';
+
+const testimonials = [
+  {
+    name: "Ricardo M.",
+    role: "Ex-vendedor",
+    content: "Fechei contrato de R$7 mil com uma clínica para automatizar o agendamento. O que aprendi na Formação Magic foi crucial para conseguir executar esse projeto sem problemas.",
+    image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    name: "Marcos S.",
+    role: "Estudante",
+    content: "Ganhei R$3.500 em 2 dias com um fluxo automatizado para uma loja virtual. Foi meu primeiro projeto e já valeu o investimento no curso!",
+    image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    name: "Bruno K.",
+    role: "Analista de TI",
+    content: "Consegui complementar minha renda em mais de R$8 mil por mês criando automações para pequenas empresas. As mentorias fizeram toda a diferença.",
+    image: "https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    name: "Felipe A.",
+    role: "Autônomo",
+    content: "Fechei R$12.500 no primeiro mês usando as técnicas da Formação. Consegui trocar meu trabalho tradicional por projetos de automação com IA.",
+    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  }
+];
+---
+
+<StaticPageLayout 
+  title="Histórias de Sucesso"
+  description="Conheça as histórias reais de alunos que transformaram suas vidas com a Formação Magic"
+>
+  <h1 class="text-4xl font-bold mb-8">Histórias de Sucesso</h1>
+
+  <p class="text-xl text-gray-300 mb-12">
+    Conheça alguns dos nossos alunos que já estão colhendo os frutos do seu aprendizado em automação e IA.
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-8">
+    {testimonials.map((testimonial) => (
+      <div class="card flex flex-col md:flex-row gap-6 items-start">
+        <img 
+          src={testimonial.image} 
+          alt={testimonial.name}
+          class="w-16 h-16 rounded-full object-cover ring-2 ring-accent-500"
+        />
+        
+        <div>
+          <svg class="text-accent-400 h-8 w-8 mb-2" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+          </svg>
+          <p class="text-gray-300 mb-4">{testimonial.content}</p>
+          <div>
+            <p class="font-bold">{testimonial.name}</p>
+            <p class="text-gray-400">{testimonial.role}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-16 text-center">
+    <a href="/#oferta" class="btn-primary inline-flex items-center justify-center">
+      Quero Fazer Parte Dessas Histórias
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 ml-2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+      </svg>
+    </a>
+  </div>
+</StaticPageLayout>

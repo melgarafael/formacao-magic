@@ -1,0 +1,44 @@
+---
+const testimonialImages = [
+  { src: "/Depoimento 15000.png", alt: "Depoimento de aluno - R$15.000" },
+  { src: "/Depoimento 1750.jpeg", alt: "Depoimento de aluno - R$1.750" },
+  { src: "/Depoimento 8000.jpeg", alt: "Depoimento de aluno - R$8.000" },
+  { src: "/Depoimento 7000.png", alt: "Depoimento de aluno - R$7.000" },
+  { src: "/Depoimento 68mil.png", alt: "Depoimento de aluno - R$68.000" },
+  { src: "/Depoimento 2794.png", alt: "Depoimento de aluno - R$2.794" },
+  { src: "/Depoimento 1500.png", alt: "Depoimento de aluno - R$1.500" },
+  { src: "/Depoimento David.png", alt: "Depoimento do David" },
+  { src: "/Depoimento David 2.png", alt: "Segundo depoimento do David" },
+  { src: "/Depoimento 3500.png", alt: "Depoimento de aluno - R$3.500" },
+  { src: "/Depoimento COnseguiu.jpeg", alt: "Depoimento de conquista" }
+];
+---
+
+<section class="section bg-dark-900">
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 fade-in-element">
+      <h2 class="text-3xl font-bold mb-4">
+        Resultados que não deixam dúvidas: <span class="text-primary-500">nossos alunos estão faturando</span>
+      </h2>
+      <p class="text-lg mb-8 text-gray-300">
+        Veja com seus próprios olhos prints de alunos que já estão ganhando dinheiro com as automações ensinadas na Formação Magic.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in-element">
+      {testimonialImages.map((image) => (
+        <div class="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]">
+          <div class="aspect-[4/3] w-full">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+            />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-dark-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

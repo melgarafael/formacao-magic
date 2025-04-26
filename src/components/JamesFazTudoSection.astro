@@ -1,0 +1,131 @@
+---
+const benefits = [
+  {
+    icon: "🤖",
+    text: "Mostra na prática como sua automação funciona"
+  },
+  {
+    icon: "🎯",
+    text: "Gera provas sociais para conquistar clientes"
+  },
+  {
+    icon: "🧠",
+    text: "Usa IA para entender as dores do lead e responder com eficiência"
+  },
+  {
+    icon: "⚙️",
+    text: "Vem pronto com conexões para WhatsApp, Google Calendar, Gmail e muito mais"
+  },
+  {
+    icon: "💼",
+    text: "Ideal para usar em apresentações, reuniões ou páginas de venda"
+  }
+];
+---
+
+<section id="james-faz-tudo" class="section bg-dark-950 relative py-24">
+  <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-primary-900/10 blur-[120px] -z-10"></div>
+  
+  <div class="container-custom">
+    <div class="text-center max-w-3xl mx-auto mb-16 fade-in-element">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6">
+        Ganhe o <span class="text-accent-400">James Faz Tudo</span><br>
+        O Agente de IA Perfeito para Impressionar e Vender
+      </h2>
+      <p class="text-gray-300 text-lg">
+        Esse é o bônus mais desejado pelos nossos alunos. O James Faz Tudo é um super agente criado em n8n, que entende texto, imagem e voz — e pode fazer demonstrações automáticas do seu trabalho de automação para impressionar leads e fechar contratos com mais facilidade.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="relative fade-in-element">
+        <div 
+          id="tilt-image" 
+          class="relative bg-dark-800/70 border border-dark-700 p-3 rounded-2xl shadow-2xl overflow-hidden"
+        >
+          <img 
+            src="/jamesfaztudo.png" 
+            alt="James Faz Tudo - Agente de IA" 
+            class="w-full h-auto rounded-xl"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-dark-950/60 to-transparent rounded-xl pointer-events-none"></div>
+        </div>
+      </div>
+
+      <div class="space-y-6 fade-in-element">
+        {benefits.map(benefit => (
+          <div class="flex items-start gap-4">
+            <div class="text-2xl flex-shrink-0">{benefit.icon}</div>
+            <p class="text-lg text-gray-200">{benefit.text}</p>
+          </div>
+        ))}
+
+        <div class="bg-dark-800 rounded-xl p-6 mt-8 border border-dark-700">
+          <p class="text-lg font-medium mb-4">
+            Esse bônus só está disponível para quem se inscrever hoje.
+            <br><strong>Quer garantir o seu James Faz Tudo?</strong>
+          </p>
+          <a 
+            href="https://wa.me/553131570391?text=Opa%20vim%20do%20site%20de%20voc%C3%AAs!%20Quero%20me%20inscrever%20na%20Forma%C3%A7%C3%A3o%20e%20ganhar%20o%20James%20faz%20tudo!"
+            target="_blank"
+            class="btn-primary w-full flex items-center justify-center gap-2"
+          >
+            Quero o James Faz Tudo
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import VanillaTilt from 'vanilla-tilt';
+
+  // Initialize tilt effect
+  const element = document.getElementById('tilt-image');
+  if (element) {
+    // Only initialize on desktop/tablet
+    if (window.innerWidth > 768) {
+      VanillaTilt.init(element, {
+        max: 10, // Maximum tilt rotation (degrees)
+        perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets
+        scale: 1.02, // 2% zoom on hover
+        speed: 1000, // Speed of the enter/exit transition
+        glare: true, // Whether to add glare effect
+        "max-glare": 0.3, // Maximum glare opacity
+        gyroscope: true, // Boolean to enable/disable device orientation detection
+        gyroscopeMinAngleX: -45, // This is the bottom limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the left border of the element
+        gyroscopeMaxAngleX: 45, // This is the top limit of the device angle on X axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the right border of the element
+        gyroscopeMinAngleY: -45, // This is the bottom limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the top border of the element
+        gyroscopeMaxAngleY: 45, // This is the top limit of the device angle on Y axis, meaning that a device rotated at this angle would tilt the element as if the mouse was on the bottom border of the element
+      });
+    }
+  }
+</script>
+
+<style>
+  /* Add smooth transition for tilt effect */
+  #tilt-image {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: transform 0.1s ease-out;
+  }
+
+  /* Fallback styles for mobile or when JS is disabled */
+  @media (max-width: 768px) {
+    #tilt-image {
+      transform: none !important;
+    }
+  }
+
+  /* Add subtle hover effect for mobile */
+  @media (hover: none) {
+    #tilt-image:active {
+      transform: scale(0.98);
+    }
+  }
+</style>

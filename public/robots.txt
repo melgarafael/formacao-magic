@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.automatiklabs.com.br/sitemap.xml

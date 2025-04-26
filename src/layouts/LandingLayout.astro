@@ -1,0 +1,177 @@
+---
+import "../styles/global.css";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>Curso de Automação com IA | Formação Magic</title>
+    <meta name="title" content="Curso de Automação com IA | Formação Magic" />
+    <meta name="description" content="Aprenda a criar automações com IA, n8n e ferramentas no-code. Conquiste clientes com Agentes de IA e ganhe até R$10mil por mês. Acesse agora." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.automatiklabs.com.br/" />
+    <meta property="og:title" content="Curso de Automação com IA | Formação Magic" />
+    <meta property="og:description" content="Domine o n8n, crie Agentes de IA e ganhe dinheiro com automações." />
+    <meta property="og:image" content="/public/imagemseo.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.automatiklabs.com.br/" />
+    <meta property="twitter:title" content="Curso de Automação com IA | Formação Magic" />
+    <meta property="twitter:description" content="Domine o n8n, crie Agentes de IA e ganhe dinheiro com automações." />
+    <meta property="twitter:image" content="/public/imagemseo.jpg" />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "Formação Magic: Curso de Automação com IA",
+        "description": "Curso completo de automações com n8n, agentes de IA e vendas automatizadas.",
+        "provider": {
+          "@type": "Organization",
+          "name": "Automatik Labs",
+          "url": "https://www.automatiklabs.com.br"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "1497.00",
+          "priceCurrency": "BRL"
+        }
+      }
+    </script>
+
+    <!-- Hotjar Tracking Code -->
+    <script>
+      (function (c, s, q, u, a, r, e) {
+          c.hj=c.hj||function(){(c.hj.q=c.hj.q||[]).push(arguments)};
+          c._hjSettings = { hjid: a };
+          r = s.getElementsByTagName('head')[0];
+          e = s.createElement('script');
+          e.async = true;
+          e.src = q + c._hjSettings.hjid + u;
+          r.appendChild(e);
+      })(window, document, 'https://static.hj.contentsquare.net/c/csq-', '.js', 6383607);
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=1;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2955744278054674');
+      fbq('init', '1610239209930602');
+      fbq('track', 'PageView');
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-br from-dark-900 to-dark-950 text-white font-sans min-h-screen">
+    <div class="relative">
+      <!-- Background gradients -->
+      <div class="fixed inset-0 z-[-1]">
+        <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-primary-500/5 blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-secondary-500/5 blur-[120px]"></div>
+      </div>
+      
+      <slot />
+    </div>
+
+    <WhatsAppButton />
+
+    <script>
+      // Detect elements for fade-in animation
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-in");
+              entry.target.style.opacity = "1";
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".fade-in-element").forEach((element) => {
+          element.style.opacity = "0";
+          observer.observe(element);
+        });
+
+        // Handle video modal
+        const videoButton = document.getElementById("openVideoModal");
+        const videoModal = document.getElementById("videoModal");
+        const closeVideoButton = document.getElementById("closeVideoModal");
+
+        if (videoButton && videoModal && closeVideoButton) {
+          videoButton.addEventListener("click", () => {
+            videoModal.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+          });
+
+          closeVideoButton.addEventListener("click", () => {
+            videoModal.classList.add("hidden");
+            document.body.style.overflow = "auto";
+            
+            // Stop video if playing
+            const iframe = videoModal.querySelector("iframe");
+            if (iframe) {
+              const src = iframe.src;
+              iframe.src = src;
+            }
+          });
+        }
+
+        // Track CTA clicks
+        document.querySelectorAll('[data-fb-event="cta"]').forEach(el => {
+          el.addEventListener('click', () => fbq('track', 'InitiateCheckout'));
+        });
+
+        // Track form submissions
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+          contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            fbq('track', 'Lead');
+            contactForm.submit();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

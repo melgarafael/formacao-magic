@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-white bg-gradient-to-br from-dark-900 to-dark-950;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 text-center shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 hover:scale-[1.02] animate-glow;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-400 hover:to-secondary-500 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 text-center hover:shadow-lg hover:shadow-secondary-500/20 hover:scale-[1.02];
+  }
+
+  .card {
+    @apply bg-gradient-to-br from-dark-800/50 to-dark-900/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-dark-700/50 hover:border-primary-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/5;
+  }
+
+  .section {
+    @apply py-16 md:py-24 relative;
+  }
+
+  .feature-item {
+    @apply flex items-start gap-4 mb-6;
+  }
+
+  .feature-icon {
+    @apply text-primary-500 text-2xl flex-shrink-0 mt-1;
+  }
+
+  .fade-in-element {
+    @apply opacity-0;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-secondary-500 bg-clip-text text-transparent;
+  }
+
+  .highlight-box {
+    @apply bg-gradient-to-br from-dark-800/30 to-dark-900/30 backdrop-blur-md border border-dark-700/50 rounded-xl p-6 hover:border-primary-500/20 transition-all duration-300;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-500/50 rounded-full hover:bg-primary-500/70 transition-colors;
+}
+
+/* Satoshi Font */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/XGFK2ATQT265F5UPJXR6XFHIZOQRIQGB/2FBGAXFQB4HXKTJTS7KBQHKQT4ZXQZ7N/SATOSHI-REGULAR.WOFF2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/QPTPYJXN2CG5HNCKEZ4ZNRP2VMRXZ2SC/C6NLWF2QXSPQZ2H6QXHYPQT7ZIWPQZ4Y/SATOSHI-MEDIUM.WOFF2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/LLB2TPKQT7P5DXPZXSPYZKJ6ZJLN5SXC/NRXPPWXJKQVHB6XJCXJKPQTXPQJ4K2JB/SATOSHI-BOLD.WOFF2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
